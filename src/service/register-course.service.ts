@@ -26,8 +26,9 @@ export class RegisterCourseService {
         documentFile: registerCourse.documentFile,
       });
     }
-
-    console.log(student);
-    return await this.registerCourseRepository.createRegister(registerCourse);
+    return await this.registerCourseRepository.createRegister(
+      registerCourse,
+      student,
+    );
   }
 }
