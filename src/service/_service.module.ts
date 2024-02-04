@@ -3,8 +3,14 @@ import { ModalityService } from './modality.service';
 import { _repositoryModule } from '../repository/_repository.module';
 import { CourseService } from './course.service';
 import { RegisterCourseService } from './register-course.service';
+import { StudentService } from './student.service';
 
-const services = [ModalityService, CourseService, RegisterCourseService];
+const services = [
+  ModalityService,
+  CourseService,
+  RegisterCourseService,
+  StudentService,
+];
 
 @Module({
   imports: [_repositoryModule],
