@@ -11,9 +11,25 @@ export class RegisterCourseRepository {
     private registerCourse: Repository<RegisterCourse>,
   ) {}
 
-  public async createRegister(registerCourse: RegisterCourseDto) {
-    const newCourseRegistered =
-      await this.registerCourse.create(registerCourse);
-    return await this.registerCourse.save(newCourseRegistered);
+  public async createRegister(registerCourse: RegisterCourseDto, student: any) {
+    const newCourseRegistered = new RegisterCourse();
+    newCourseRegistered.name = registerCourse.name;
+    newCourseRegistered.cpf = registerCourse.cpf;
+    newCourseRegistered.courseId = registerCourse.courseId;
+    newCourseRegistered.student = student;
+
+    try {
+      await this.registerCourse.save(newCourseRegistered);
+      return {
+        success: true,
+        message: 'O aluno foi cadastrado com sucesso!',
+      };
+    } catch (err) {
+      console.log(err);
+      return {
+        success: false,
+        message: 'Erro ao cadastrar, confira os dados do aluno!',
+      };
+    }
   }
 }
