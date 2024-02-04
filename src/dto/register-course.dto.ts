@@ -1,5 +1,6 @@
 export class RegisterCourseDto {
   id: number;
+  idStudent?: number;
   name: string;
   email: string;
   phone: string;

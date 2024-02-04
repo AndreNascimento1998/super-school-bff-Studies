@@ -16,7 +16,7 @@ export class RegisterCourseService {
 
     if (!student) {
       student = await this.studentRepository.register({
-        id: registerCourse.id,
+        id: registerCourse.idStudent,
         name: registerCourse.name,
         email: registerCourse.email,
         phone: registerCourse.phone,
