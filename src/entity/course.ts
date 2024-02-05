@@ -12,8 +12,32 @@ export class Course {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
-  @Column({ unique: true })
+  @Column()
   name: string;
+
+  @Column()
+  typeGraduationId: number;
+
+  @Column({ unique: true })
+  title: string;
+
+  @Column()
+  discount: number;
+
+  @Column()
+  price: number;
+
+  @Column()
+  type: string;
+
+  @Column()
+  period: string;
+
+  @Column()
+  maxInstallments: number;
+
+  @Column()
+  turn: string;
 
   @ManyToOne((type) => Modality, (modality) => modality.id)
   @JoinTable()
