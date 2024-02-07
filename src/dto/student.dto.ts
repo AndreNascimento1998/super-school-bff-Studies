@@ -1,10 +1,10 @@
 export class StudentDto {
-  id: number;
+  id?: number;
   name: string;
   email: string;
   phone: string;
   cep: string;
   cpf: string;
-  dateBirth: string;
+  dateBirth: Date;
   documentFile: string;
 }

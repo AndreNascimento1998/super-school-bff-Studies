@@ -22,7 +22,7 @@ export class Student {
   cpf: string;
 
   @Column()
-  dateBirth: string;
+  dateBirth: Date;
 
   @Column()
   documentFile: string;
