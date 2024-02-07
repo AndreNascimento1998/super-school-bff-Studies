@@ -11,8 +11,13 @@ export class StudentRepository {
     private studentRepository: Repository<Student>,
   ) {}
 
-  public async register(studentDatas: StudentDto) {
-    return this.studentRepository.save(studentDatas);
+  public async register(studentData: StudentDto) {
+    const resp = await this.studentRepository.insert(studentData);
+
+    return {
+      id: resp.raw.insertedId ?? 0,
+      ...studentData,
+    };
   }
 
   public async findOne(cpf: string) {

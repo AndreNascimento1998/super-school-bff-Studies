@@ -10,20 +10,22 @@ export class RegisterCourseService {
     private readonly studentRepository: StudentRepository,
   ) {}
 
-  public async postRegister(registerCourse: RegisterCourseDto) {
+  public async postRegister(
+    registerCourse: RegisterCourseDto,
+    filePath: string,
+  ) {
     let student: RegisterCourseDto;
     student = await this.studentRepository.findOne(registerCourse.cpf);
 
     if (!student) {
       student = await this.studentRepository.register({
-        id: registerCourse.idStudent,
         name: registerCourse.name,
         email: registerCourse.email,
         phone: registerCourse.phone,
         cep: registerCourse.cep,
         cpf: registerCourse.cpf,
         dateBirth: registerCourse.dateBirth,
-        documentFile: registerCourse.documentFile,
+        documentFile: filePath,
       });
     }
     return await this.registerCourseRepository.createRegister(
