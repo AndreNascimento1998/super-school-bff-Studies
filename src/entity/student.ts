@@ -1,5 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { RegisterCourse } from './register-course';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('students')
 export class Student {
@@ -26,7 +25,4 @@ export class Student {
 
   @Column()
   documentFile: string;
-
-  @OneToMany(() => RegisterCourse, (registerCourse) => registerCourse.student)
-  registeredCourses: RegisterCourse[];
 }

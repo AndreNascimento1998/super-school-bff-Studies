@@ -9,6 +9,7 @@ import { diskStorage } from 'multer';
 import { RegisterCourseService } from '../service/register-course.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { extname } from 'path';
+import { StudentDto } from '../dto/student.dto';
 
 @Controller('register-course')
 export class RegisterCourseController {
@@ -33,10 +34,17 @@ export class RegisterCourseController {
     @UploadedFile() payloadFile: Express.Multer.File,
     @Body() registerData,
   ) {
-    console.log(registerData);
-    return this.registerCourseService.postRegister(
-      JSON.parse(registerData.payloadData),
-      payloadFile.path,
-    );
+    const payload = JSON.parse(registerData.payloadData);
+    const student: StudentDto = {
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone,
+      cep: payload.cep,
+      cpf: payload.cpf,
+      dateBirth: payload.dateBirth,
+      documentFile: payloadFile.path,
+    };
+
+    return this.registerCourseService.postRegister(student, payload.courseId);
   }
 }

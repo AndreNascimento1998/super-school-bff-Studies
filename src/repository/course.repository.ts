@@ -16,6 +16,10 @@ export class CourseRepository {
     return this.courseRepository.find();
   }
 
+  public async findById(courseId: number): Promise<Course> {
+    return this.courseRepository.findOneBy({ id: courseId });
+  }
+
   public async findAllByModality(modality: Modality): Promise<CourseDto[]> {
     return this.courseRepository.findBy({ modality: modality });
   }

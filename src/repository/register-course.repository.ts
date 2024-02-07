@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RegisterCourse } from '../entity/register-course';
 import { Repository } from 'typeorm';
-import { RegisterCourseDto } from '../dto/register-course.dto';
+import { Course } from '../entity/course';
+import { StudentDto } from '../dto/student.dto';
 
 @Injectable()
 export class RegisterCourseRepository {
@@ -11,18 +12,18 @@ export class RegisterCourseRepository {
     private registerCourse: Repository<RegisterCourse>,
   ) {}
 
-  public async createRegister(registerCourse: RegisterCourseDto, student: any) {
-    const newCourseRegistered = new RegisterCourse();
-    newCourseRegistered.name = registerCourse.name;
-    newCourseRegistered.cpf = registerCourse.cpf;
-    newCourseRegistered.courseId = registerCourse.courseId;
-    newCourseRegistered.student = student;
+  public async createRegister(student: StudentDto, course: Course) {
+    const createdAt = new Date();
 
     try {
-      await this.registerCourse.save(newCourseRegistered);
+      await this.registerCourse.save({
+        course,
+        student,
+        createdAt,
+      });
       return {
         success: true,
-        message: 'O aluno foi cadastrado com sucesso!',
+        message: 'A matrícula foi realizada com sucesso com sucesso!',
       };
     } catch (err) {
       console.log(err);

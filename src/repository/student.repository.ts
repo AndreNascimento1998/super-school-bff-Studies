@@ -11,7 +11,7 @@ export class StudentRepository {
     private studentRepository: Repository<Student>,
   ) {}
 
-  public async register(studentData: StudentDto) {
+  public async register(studentData: StudentDto): Promise<StudentDto> {
     const resp = await this.studentRepository.insert(studentData);
 
     return {
@@ -20,7 +20,7 @@ export class StudentRepository {
     };
   }
 
-  public async findOne(cpf: string) {
+  public async findOne(cpf: string): Promise<Student> {
     return this.studentRepository.findOneBy({ cpf: cpf });
   }
 }
