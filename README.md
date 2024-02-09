@@ -14,7 +14,7 @@ Este projeto foi desenvolvido por [André Cardoso](https://www.linkedin.com/in/a
 ## Tecnologias
 Para o desenvolvimento, foram utilizadas as seguintes tecnologias:
 - Nest.js
-  - TypeORM
+- TypeORM
 - MySQL
 - Docker
 
