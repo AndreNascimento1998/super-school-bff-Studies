@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ModalityService } from './modality.service';
-import { _repositoryModule } from '../repository/_repository.module';
+import { RepositoryModule } from '../repository/_repository.module';
 import { CourseService } from './course.service';
 import { RegisterCourseService } from './register-course.service';
 import { StudentService } from './student.service';
@@ -13,7 +13,7 @@ const services = [
 ];
 
 @Module({
-  imports: [_repositoryModule],
+  imports: [RepositoryModule],
   providers: services,
   exports: services,
 })

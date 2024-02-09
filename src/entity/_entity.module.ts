@@ -10,4 +10,4 @@ export const entityExports = [Modality, Course, RegisterCourse, Student];
   imports: [TypeOrmModule.forFeature(entityExports)],
   exports: [TypeOrmModule.forFeature(entityExports)],
 })
-export class _entityModule {}
+export class EntityModule {}

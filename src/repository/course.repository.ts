@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CourseDto } from '../dto/course.dto';
+import { CourseDto, CourseInputDto } from '../dto/course.dto';
 import { Course } from '../entity/course';
 import { Modality } from '../entity/modality';
 
@@ -22,5 +22,14 @@ export class CourseRepository {
 
   public async findAllByModality(modality: Modality): Promise<CourseDto[]> {
     return this.courseRepository.findBy({ modality: modality });
+  }
+
+  public async create(course: CourseInputDto): Promise<Course> {
+    const resp = await this.courseRepository.insert(course);
+
+    return {
+      id: resp.raw?.insertId ?? 0,
+      ...course,
+    };
   }
 }
