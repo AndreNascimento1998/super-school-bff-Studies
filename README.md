@@ -44,5 +44,5 @@ $ npm run start
 ### André Cardoso
 
 - **Fone / WhatsApp:** (62) 98590-4509
-- [Email](mailto:andre.ncardoso@hotmail.com) 
-- [LinkedIn](https://www.linkedin.com/in/andre-ncardoso/)
+- [Email]andre.ncardoso@hotmail.com
+- [LinkedIn]https://www.linkedin.com/in/andre-ncardoso/
