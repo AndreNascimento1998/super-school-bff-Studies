@@ -2,72 +2,47 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">Projeto de avaliação de conhecimento para preenchimento de vaga de desenvolvedor Full Stack.</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Autor
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este projeto foi desenvolvido por [André Cardoso](https://www.linkedin.com/in/andre-ncardoso/).
 
-## Installation
+## Tecnologias
+Para o desenvolvimento, foram utilizadas as seguintes tecnologias:
+- Nest.js
+  - TypeORM
+- MySQL
+- Docker
+
+## Preparação do ambiente:
+Para maior comodidade, o banco de dados será construído a partir da imagem oficial, disponível no portal [Docker Hub](https://hub.docker.com/_/mysql). Portanto, será necessário que haja na máquina uma instalação do [Docker](https://docs.docker.com/desktop/install/windows-install/) e também [Docker Compose](https://docs.docker.com/compose/).
+
+Após a instalação dos componentes acima, a imagem pode ser inicializada a partir do comando abaixo:
 
 ```bash
-$ npm install
+$ docker-compose up -d
 ```
 
-## Running the app
+## Executando a aplicação
+Para o correto funcionamento da aplicação, é necessário que haja na uma instalação de versão do Node.js igual ou superior à 18.0.0, e NPM igual ou superior à 9.0.0.
 
+O comando para executar a aplicação em modo servidor local é:
 ```bash
-# development
 $ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+## Licença do Projeto
 
-```bash
-# unit tests
-$ npm run test
+| Nest is [MIT licensed](LICENSE). |
 
-# e2e tests
-$ npm run test:e2e
+---
 
-# test coverage
-$ npm run test:cov
-```
+### André Cardoso
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- **Fone / WhatsApp:** (62) 98590-4509
+- [Email](mailto:andre.ncardoso@hotmail.com) 
+- [LinkedIn](https://www.linkedin.com/in/andre-ncardoso/)
